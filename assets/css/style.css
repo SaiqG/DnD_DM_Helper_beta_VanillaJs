@@ -1,0 +1,437 @@
+body {
+    margin: 0;
+    font-family: 'Fuzzy Bubbles', cursive;
+    /* font-family: 'Josefin Sans', sans-serif; */
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+    background-color: antiquewhite;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+/* base */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    right: 50px;
+}
+
+.bg__img {
+    /* display: flex;
+    /* flex-direction: column;
+    justify-content: center; */
+    /* width: 100%; */
+    height: 100vh;
+    background: url("../img/back.png") center no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.header {
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #333;
+}
+/* navigation */
+.nav {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav__links {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s linear;
+}
+
+.nav__links::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+    background-color: rgba(123, 8, 255, 0.5);
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.3s linear;
+}
+
+.nav__links:hover {
+    color: rgba(123, 8, 255, 0.5);
+}
+
+.nav__links:hover:after {
+    opacity: 1;
+}
+/* champions menu */
+.menu {
+    display: flex;
+    justify-content: left;
+    margin-top: 0px;
+    position: relative;
+    /* top: 0;
+    left: 0;
+    right: 0; */
+}
+
+.menu__item {
+    /* width: auto; */
+    opacity: 0.8;
+    margin: 10px;
+    transition: opacity 0.2s linear, filter 0.2s linear, transform 0.2s linear;
+    cursor: pointer;
+
+}
+
+.menu__item.active {
+    opacity: 1;
+    filter: drop-shadow(0 0 1px rgb(123, 8, 255));
+    transform: translate3d(0, 10px, 0);
+    transform: scale(1.15);
+
+}
+
+.menu__item:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 1px rgb(123, 8, 255));
+    transform: translate3d(0, 10px, 0);
+    transform: scale(1.15);
+    transition: opacity 0.2s linear, filter 0.2s linear, transform 0.2s linear;
+
+}
+
+.menu__icon {
+    height: 60px;
+}
+/* menu nav*/
+.list {
+    width: 100vh;
+    position: relative;
+}
+
+.img_menu {
+    width: 850px;
+    display: flex;
+    position: relative;
+}
+
+.show__list {
+    opacity: 0;
+    height: 650px;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+}
+
+.show__list.active {
+    opacity: 1;
+}
+
+/* stats colculate */
+.cont__fill {
+    width: 270px;
+    height: 600px;
+    position: absolute;
+    background: rgb(52, 255, 153);
+    opacity: 0.2;
+    top: 180px;
+}
+
+.stats__pos {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    height: 477px;
+    width: 42px;
+    flex-direction: column;
+    position: absolute;
+    top: 37px;
+    left: 51px;
+    z-index: 123;
+    justify-content: space-between;
+}
+
+.stats {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    background: none;
+    border: none;
+    font-family: 'Fuzzy Bubbles', cursive;
+    /* font-family: 'Josefin Sans', sans-serif; */
+}
+
+.stats__change {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    height: 500px;
+    width: 50px;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 37px;
+    /* z-index: 123; */
+    justify-content: space-between;
+    text-align: center;
+}
+
+.chaild__stats {
+    position: absolute;
+    /* border: 1px solid #333; */
+    height: 542px;
+    width: 130px;
+    top: 35px;
+    left: 115px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.chaild__stats__box {
+    /* border: 1px solid #333; */
+    height: 16.6666%;
+}
+
+.ch__st {
+    text-align: left;
+    padding-top: 1px;
+    /* z-index: 155; */
+    margin-left: 11px;
+    position: relative;
+}
+
+.stat__name {
+    position: absolute;
+    left: 22px;
+    /* font-family: 'Josefin Sans', 'Fuzzy Bubbles'; */
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.chaild__stats input[type="checkbox" i] {
+    opacity: 0.7;
+    margin: 0;
+    transform: scale(0.9);
+    line-height: 1;
+    position: absolute;
+    left: -12px;
+    z-index: 155;
+    cursor: pointer;
+}
+
+/* heals bar menu */
+.profil__stats {
+    position: absolute;
+    width: 340px;
+    height: 290px;
+    display: flex;
+    top: 25px;
+    left: 268px;
+}
+
+.top__stats {
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+    position: absolute;
+    top: 11px;
+    z-index: 200;
+}
+
+.kz {
+    position: absolute;
+    height: 50px;
+    width: 60px;
+    left: 83px;
+    top: 3px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    background: none;
+    border: none;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.inic {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 172px;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    background: none;
+    border: none;
+    font-family: 'Fuzzy Bubbles', cursive;
+
+}
+
+.speed {
+    position: absolute;
+    height: 50px;
+    width: 60px;
+    left: 267px;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    background: none;
+    border: none;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.death__check {
+    display: flex;
+    position: absolute;
+    bottom: 22px;
+    left: 46px;
+    width: 249px;
+    height: 22px;
+    justify-content: space-between;
+}
+
+.dead {
+    display: flex;
+    position: relative;
+    width: 35.9%;
+    justify-content: space-between;
+}
+
+.alive {
+    display: flex;
+    position: relative;
+    width: 35.9%;
+    justify-content: space-between;
+}
+
+.death__check__container {
+    height: 17px;
+    position: relative;
+    width: 17px;
+
+    z-index: 1234;
+}
+
+.death__check__container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 17px;
+    width: 17px;
+    margin: 0;
+}
+
+.checkmark {
+    position: relative;
+    transition: opacity 0.3s linear;
+}
+
+/* .checkmark::before{
+        content: "";
+        position: absolute;
+        height: 17px;
+        width: 17px;
+        opacity: 0;
+        border-radius: 50%;
+        transition: opacity 0.3s linear;
+        cursor: pointer;
+        background-color: rgba(160, 12, 12, 0.8);
+    }
+    .checkmark::after{
+        content: "";
+        position: absolute;
+        height: 17px;
+        width: 17px;
+        opacity: 0;
+        border-radius: 50%;
+        transition: opacity 0.3s linear;
+        cursor: pointer;
+        background-color: rgba(15, 241, 15, 0.527);
+    }  */
+
+
+.rolls__ind {
+    height: 25px;
+    transition: opacity 0.3s linear, transform 0.3s linear;
+    opacity: 0;
+    cursor: pointer;
+    align-items: center;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+}
+
+.death__check__container input:checked+.checkmark .rolls__ind {
+    opacity: 1;
+    transform: scale(1.3);
+}
+.death__check__container input:hover+.checkmark .rolls__ind {
+    opacity: 0.4;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: default-button;
+    margin: 0px;
+    cursor: pointer;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}

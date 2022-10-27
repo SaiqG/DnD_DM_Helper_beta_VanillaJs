@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Josefin+Sans&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg__img"></div>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">DungeonMaster Tool</div>
+                <nav class="nav">
+                    <a class="nav__links" href="#">Champions</a>
+                    <a class="nav__links" href="#">Monsters</a>
+                    <a class="nav__links" href="#">Spells</a>
+                    <a class="nav__links" href="#">database</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="container">
+            <!-- Menu -->
+            <div class="menu" id="menu">
+                <a class="menu__item" active-menu="#char" onclick="RefreshStats()"><img class="menu__icon"
+                        src="assets/img/inventory.png">
+                </a>
+                <a class="menu__item" active-menu="#bag"><img class="menu__icon" src="assets/img/bag.png">
+                </a>
+                <a class="menu__item" active-menu="#weapons"><img class="menu__icon" src="assets/img/weapons.png">
+                </a>
+                <a class="menu__item" active-menu="#spells"><img class="menu__icon" src="assets/img/spell-book.png">
+                </a>
+            </div>
+            <!-- Lists -->
+            <div class="list" id="list">
+                <!-- player stats-->
+                <div class="show__list active" id="char">
+                    <img class="img_menu" src="assets/img/stats__bg.png">
+                    <!-- stats colculate -->
+                    <div class="stats__pos">
+                        <input class="stats" id="str" type="number" min="0" max="30" value="10">
+                        <input class="stats" id="dex" type="number" min="0" max="30" value="10">
+                        <input class="stats" id="bdy" type="number" min="0" max="30" value="10">
+                        <input class="stats" id="int" type="number" min="0" max="30" value="10">
+                        <input class="stats" id="mnd" type="number" min="0" max="30" value="10">
+                        <input class="stats" id="har" type="number" min="0" max="30" value="10">
+                    </div>
+                    <div class="stats__change">
+                        <div id="strCh">0</div>
+                        <div id="dexCh">0</div>
+                        <div id="bdyCh">0</div>
+                        <div id="intCh">0</div>
+                        <div id="mndCh">0</div>
+                        <div id="harCh">0</div>
+                    </div>
+                    <!-- sub stats -->
+                    <span class="chaild__stats" id="Sub">
+                        <div style="padding-top: 6px ;" class="chaild__stats__box" id="strSub">
+                            <div class="ch__st">+0<label class="stat__name">спасброски</label><input type="checkbox"
+                                    class="custom__checkbox"></div>
+                            <div class="ch__st">+0<label class="stat__name">атлетика</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">запугивание</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                        </div>
+                        <div style="padding-top: 6px ;" class="chaild__stats__box" id="dexSub">
+                            <div class="ch__st">+0<label class="stat__name">спасброски</label><input type="checkbox"
+                                    class="custom__checkbox"></div>
+                            <div class="ch__st">+0<label class="stat__name">акробатика</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">ловкость рук</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">скрытность</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                        </div>
+                        <div style="padding-top: 6px ;" class="chaild__stats__box" id="bdySub">
+                            <div class="ch__st">+0<label class="stat__name">спасброски</label><input type="checkbox"
+                                    class="custom__checkbox"></div>
+                        </div>
+                        <div style="padding-top: 2px ;" class="chaild__stats__box" id="intSub">
+                            <div class="ch__st">+0<label class="stat__name">спасброски</label><input type="checkbox"
+                                    class="custom__checkbox"></div>
+                            <div class="ch__st">+0<label class="stat__name">магия</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">история</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">анализ</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">природа</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">религия</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                        </div>
+                        <div style="padding-top: 2px ;" class="chaild__stats__box" id="mndSub">
+                            <div class="ch__st">+0<label class="stat__name">спасброски</label><input type="checkbox"
+                                    class="custom__checkbox"></div>
+                            <div class="ch__st">+0<label class="stat__name">животные</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">проницат.</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">медицина</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">внимательн.</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">выживание</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                        </div>
+                        <div style="padding-top: 7px ;" class="chaild__stats__box" id="harSub">
+                            <div class="ch__st">+0<label class="stat__name">спасброски</label><input type="checkbox"
+                                    class="custom__checkbox"></div>
+                            <div class="ch__st">+0<label class="stat__name">обман</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">запугивание</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">выступление</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                            <div class="ch__st">+0<label class="stat__name">убеждение</label><input type="checkbox"
+                                    class="custom__checkbox" onclick="DoubleCheckbox(this)"></div>
+                        </div>
+                    </span>
+                    <!-- heals bar menu -->
+                    <div class="profil__stats">
+                        <div class="top__stats">
+                            <input class="kz" type="number" value="15">
+                            <input class="inic" type="text" value="+2">
+                            <input class="speed" type="number" value="30">
+                        </div>
+                        <div></div>
+                        <div class="death__check">
+                            <span class="dead">
+                                <label class="death__check__container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"><img src="assets/img/skull-and-bones.png"
+                                            class="rolls__ind"></span>
+                                </label>
+                                <label class="death__check__container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"><img src="assets/img/skull-and-bones.png"
+                                            class="rolls__ind"></span>
+                                </label>
+                                <label class="death__check__container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"><img src="assets/img/skull-and-bones.png"
+                                            class="rolls__ind"></span>
+                                </label>
+                            </span>
+
+                            <span class="alive">
+                                <label class="death__check__container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"><img src="assets/img/revive.png" class="rolls__ind"></span>
+                                </label>
+                                <label class="death__check__container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"><img src="assets/img/revive.png" class="rolls__ind"></span>
+                                </label>
+                                <label class="death__check__container">
+                                    <input type="checkbox">
+                                    <span class="checkmark"><img src="assets/img/revive.png" class="rolls__ind"></span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- player bag -->
+                <div class="show__list" id="bag">
+                    <img class="img_menu" src="assets/img/baginv.png" height="680px">
+                </div>
+                <!-- player weapons -->
+                <div class="show__list" id="weapons">
+                    <img class="img_menu" src="assets/img/weap.png">
+                </div>
+                <!-- player spells -->
+                <div class="show__list" id="spells">
+                </div>
+            </div>
+        </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="js/app.js"></script>
+
+</html>
