@@ -10,17 +10,17 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="hidden">
     <div class="bg__img"></div>
     <header class="header">
         <div class="container">
             <div class="header__inner">
                 <div class="header__logo">DungeonMaster Tool</div>
                 <nav class="nav">
-                    <a class="nav__links" href="#">Champions</a>
-                    <a class="nav__links" href="#">Monsters</a>
-                    <a class="nav__links" href="#">Spells</a>
-                    <a class="nav__links" href="#">database</a>
+                    <a class="nav__links" onclick="ScrollMain()">Champions</a>
+                    <a class="nav__links" onclick="ScrollMonst()">Monsters</a>
+                    <a class="nav__links" href="https://dnd.su/spells/" target="_blank">Spells</a>
+                    <a class="nav__links" href="https://dnd.su/" target="_blank">database</a>
                 </nav>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="container">
             <!-- Menu -->
             <div class="menu" id="menu">
-                <a class="menu__item" active-menu="#char" onclick="RefreshStats()"><img class="menu__icon"
+                <a class="menu__item active" active-menu="#char" onclick="RefreshStats()"><img class="menu__icon"
                         src="assets/img/inventory.png">
                 </a>
                 <a class="menu__item" active-menu="#bag"><img class="menu__icon" src="assets/img/bag.png">
@@ -133,7 +133,11 @@
                             <input class="inic" type="text" value="+2">
                             <input class="speed" type="number" value="30">
                         </div>
-                        <div></div>
+                        <div class="hits__bar">
+                            <div><input type="number" class="hits" value="20"></div>
+                            <div></div>
+                            <div><input type="text" class="hits__dice" value="1к8"></div>
+                        </div>
                         <div class="death__check">
                             <span class="dead">
                                 <label class="death__check__container">
@@ -169,6 +173,15 @@
                             </span>
                         </div>
                     </div>
+                    <div class="bonus__stats">
+                        <div class="right__based"><input type="number" class="bs__input" value="12"></div>
+                        <div class="right__based"><input type="number" class="bs__input" value="12"></div>
+                        <div class="right__based"><input type="number" class="bs__input" value="12"></div>
+                        <div class="left__based"><input type="number" class="bs__input" value="1" id="mastery"></div>
+                        <div class="left__based"><input type="checkbox" class="bs__input cb" value="12"><span
+                                class="cbUp"><img src="assets/img/success.png" class="success__img"></span></div>
+                        <div class="left__based"><input type="number" class="bs__input" value="12"></div>
+                    </div>
                 </div>
                 <!-- player bag -->
                 <div class="show__list" id="bag">
@@ -183,7 +196,14 @@
                 </div>
             </div>
         </div>
-
+       
+    </div>
+    <div class="monster__img" id="second__screen"><div>
+    <div class="container">
+        <div class="monsters">
+            
+        </div>
+    </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="js/app.js"></script>

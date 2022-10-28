@@ -82,6 +82,7 @@ function RefreshStats() {
         let stat = "#" + element.id[0] + element.id[1] + element.id[2];
         let id = stat + "Sub > div";
         let stt = stat + "Ch";
+        let mastery = +document.querySelector("#mastery").value
         stat = Math.round((document.querySelector(stat).value - 10) / 2 - 0.1);
         if (Math.sign(stat) == 1) {
             document.querySelector(stt).innerHTML = '+' + stat;
@@ -93,25 +94,25 @@ function RefreshStats() {
 
         document.querySelectorAll(id).forEach(element1 => {
             if (element1.lastChild.checked) {
-                stat += 1;
+                stat += mastery;
                 if (Math.sign(stat) >= 0) {
                     element1.firstChild.textContent = '+' + stat;
-                    stat -= 1;
+                    stat -= mastery;
                 }
                 else {
                     element1.firstChild.textContent = stat;
-                    stat -= 1;
+                    stat -= mastery;
                 }
             }
             else if (element1.lastChild.indeterminate) {
-                stat += 2;
+                stat += mastery +1;
                 if (Math.sign(stat) >= 0) {
                     element1.firstChild.textContent = '+' + stat;
-                    stat -= 2;
+                    stat -= mastery + 1;
                 }
                 else {
                     element1.firstChild.textContent = stat;
-                    stat -= 2;
+                    stat -= mastery + 1;
                 }
             }
 
@@ -133,3 +134,19 @@ function DoubleCheckbox(cb) {
     else if (!cb.checked) cb.readOnly = cb.indeterminate = true;
 }
 
+function ScrollMonst(){
+    document.querySelector("#second__screen").scrollIntoView({
+        block: "center",
+        inline: "nearest",
+        behavior: "smooth"
+    });
+    
+}
+
+function ScrollMain(){
+    window.scroll({
+        top: 0,
+        left:0,
+        behavior: "smooth"
+    });
+}
