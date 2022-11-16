@@ -29,7 +29,7 @@
         <div class="container">
             <!-- Menu -->
             <div class="menu" id="menu">
-                <a class="menu__item active" active-menu="#char" onclick="RefreshStats()"><img class="menu__icon"
+                <a class="menu__item" active-menu="#char" onclick="RefreshStats()"><img class="menu__icon"
                         src="assets/img/inventory.png">
                 </a>
                 <a class="menu__item" active-menu="#bag"><img class="menu__icon" src="assets/img/bag.png">
@@ -42,7 +42,7 @@
             <!-- Lists -->
             <div class="list" id="list">
                 <!-- player stats-->
-                <div class="show__list active" id="char">
+                <div class="show__list" id="char">
                     <img class="img_menu" src="assets/img/stats__bg.png">
                     <!-- stats colculate -->
                     <div class="stats__pos">
@@ -177,9 +177,9 @@
                         <div class="right__based"><input type="number" class="bs__input" value="12"></div>
                         <div class="right__based"><input type="number" class="bs__input" value="12"></div>
                         <div class="right__based"><input type="number" class="bs__input" value="12"></div>
-                        <div class="left__based"><input type="number" class="bs__input" value="1" id="mastery"></div>
-                        <div class="left__based"><input type="checkbox" class="bs__input cb" value="12"><span
-                                class="cbUp"><img src="assets/img/success.png" class="success__img"></span></div>
+                        <div class="left__based"><input type="text" class="bs__input" value="1" id="mastery"></div>
+                        <div class="left__based"><input type="checkbox" class="bs__input cb" value="12">
+                        <span class="cbUp"><img src="assets/img/success.png" class="success__img"></span></div>
                         <div class="left__based"><input type="number" class="bs__input" value="12"></div>
                     </div>
                 </div>
@@ -201,7 +201,21 @@
     <div class="monster__img" id="second__screen"><div>
     <div class="container">
         <div class="monsters">
-            
+            <form>
+            <input type="text" class="mob__search" placeholder="Search">
+           </form>
+           <div class="mob__found">
+
+           </div>
+            <div class ="monster__info"> 
+                <img src="assets/img/unnamed.png" alt="mob" class="monster__pic" id="mob__pic">
+                <div class="monster__stats">
+                    <div class="monster__name">name</div>
+                    <div class="monster__hp">HP</div>
+                    <div class="monster__dmg">DMG</div>
+                </div>
+            </div>
+            <button class="random__mob" onclick="ShowMob(-1)">Random enemy</button>
         </div>
     </div>
 </body>
