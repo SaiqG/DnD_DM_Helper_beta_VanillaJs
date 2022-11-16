@@ -152,10 +152,10 @@ form.addEventListener("input", async (mob) => {
     const mobsList = await FindMob();
     let mobs = mobsList.results;
     let mobN = search.value;
-
+    let lol = new RegExp(`${mobN}`, 'i')
+    //console.log(mobs.filter(mob => mob.name.toLowerCase().includes(mobN.toLowerCase())))
     mobs.forEach(name => {
-        if (name.name.match(mobN) && count < 5) {
-            console.log(mobs.indexOf(name));
+        if (name.name.match(lol) && count < 5) {
             count++;
             document.querySelector(".mob__found").innerHTML +=
                 `<dt class="search__res" id="${mobs.indexOf(name)}" onclick="ShowMob(this)">${name.name}</dt>`
@@ -164,6 +164,7 @@ form.addEventListener("input", async (mob) => {
 
     })
 })
+
 
 
 
